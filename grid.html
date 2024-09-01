@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ham</title>
+    <style>
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        margin:0;
+        padding:0;
+    }
+    #check{
+        display:none;
+    }
+    .parent{
+        display:flex;
+        justify-content: space-between;
+        padding:10px 20px;
+        background-color: lightgray;
+        align-items: center;
+        height: 80px;
+    }
+    .image > img{
+        width:80px;
+    }
+    label{
+        font-size: 2.5rem;
+        display:none;
+    }
+    .menu{
+        display:flex;
+    }
+    .menu-item{
+        display:flex;
+        gap:30px;
+        font-size: 1.4rem;
+    }
+    .menu-item>p{
+        padding:15px;
+        border-radius: 2em;
+        transition:0.3s ease
+    }
+    
+    @media screen and (max-width:550px) {
+        label{
+            display:block;
+            cursor:pointer;
+        }
+        .menu-item{
+            position:absolute;
+            display:flex;
+            font-size: 1.3rem;
+            left:0%;
+            top:-100%;
+            width:100%;
+            gap: 0px;
+            height:60px;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 30px;
+            background-color: black;
+            color:white;
+        }
+        .menu-item>p{
+            display:block
+        }
+        .menu-item>p:hover{
+            background-color: white;
+            color: black;
+            border-radius: 0;
+            height:100%;
+        }
+        #check:checked ~ .menu-item{
+            top:0%;
+            margin-top:80px;
+        }
+        
+    }
+</style>
+</head>
+<body>
+    <div class="parent">
+        <div class="image"><img src="./logo.jpeg" alt=""></div>
+        <div class="menu">
+            <input type="checkbox" name="" id="check">
+            <label for="check">&#9776;</label>
+            <div class="menu-item">
+                <p>Home</p>
+                <p>About</p>
+                <p>Mail</p>
+                <p>Contact</p>
+                <p>Support</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
